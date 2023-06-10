@@ -9,8 +9,22 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="title">
+    <header>
       <h1>Etch a Sketch</h1>
+    </header>
+    <div class="selectSize">
+      <label for="size">Choose a size for canvas:</label>
+      <select name="size">
+        <option value="16x16">16x16</option>
+        <option value="32x32">32x32</option>
+        <option value="64x64">64x64</option>
+      </select>
     </div>
+    <div class="canvas"></div>
+    <footer>
+      <button class="blackbtn">Black</button>
+      <button class="randombtn">Random</button>
+      <button class="resetbtn">Reset</button>
+    </footer>
   </body>
 </html>
