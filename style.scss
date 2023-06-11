@@ -23,18 +23,16 @@ header {
 }
 
 .selectSize {
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  label {
-    margin-right: 140px;
-  }
-
-  select {
-    border-radius: 5px;
+  input {
     padding: 10px;
-    border: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: 19px;
   }
 }
 
