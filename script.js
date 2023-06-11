@@ -32,7 +32,9 @@ function createBoard(size) {
       div.style.backgroundColor = "black";
     });
     randombtn.addEventListener("click", () => {
-      div.style.backgroundColor = "black";
+      div.addEventListener("mouseover", () => {
+        div.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`;
+      });
     });
     resetbtn.addEventListener("click", () => {
       div.style.backgroundColor = "white";
