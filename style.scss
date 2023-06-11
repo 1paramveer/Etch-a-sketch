@@ -44,7 +44,10 @@ header {
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.39);
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 0px 10px rgba(black, 0.3);
 }
 
 footer {
@@ -55,9 +58,21 @@ footer {
 
   .blackbtn,
   .randombtn,
-  .resetbtn {
-    margin: 49px;
+  .resetbtn,
+  .playGame {
+    margin: 18px;
     padding: 15px;
+  }
+
+  .playGame {
+    color: white;
+    border: none;
+    background-image: linear-gradient(
+      to right,
+      rgb(96, 255, 96),
+      rgb(109, 109, 255)
+    );
+    border-radius: 5px;
   }
 
   .blackbtn {

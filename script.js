@@ -1,19 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-  createBoard(16);
-});
-
 let sizeOption = document.querySelector("input");
-sizeOption.addEventListener("change", () => {
-  let selectedSize = sizeOption.value;
-  if (selectedSize <= 100) {
-    createBoard(selectedSize);
-  } else {
-    alert("Max value is 100");
-  }
+let canvas = document.querySelector(".canvas");
+let playGame = document.querySelector(".playGame");
+
+document.addEventListener("DOMContentLoaded", () => {
+  sizeOption.addEventListener("change", () => {
+    let selectedSize = sizeOption.value;
+    if (selectedSize <= 32) {
+      createBoard(selectedSize);
+    } else {
+      alert("Max value is 32, It just crashes on higher inputs");
+    }
+  });
 });
 
 function createBoard(size) {
-  let canvas = document.querySelector(".canvas");
+  canvas.innerHTML = "";
   canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   canvas.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
@@ -26,10 +27,18 @@ function createBoard(size) {
     div.addEventListener("mouseover", () => {
       div.style.backgroundColor = "black";
     });
+
     canvas.insertAdjacentElement("beforeend", div);
+    div.addEventListener("click", () => {
+      div.style.backgroundColor = `black`;
+    });
+    div.style.border = `1px solid rgba(0, 0, 0, 0.39)`;
+    div.style.margin = `2px`;
 
     blackbtn.addEventListener("click", () => {
-      div.style.backgroundColor = "black";
+      div.addEventListener("mouseover", () => {
+        div.style.backgroundColor = `black`;
+      });
     });
     randombtn.addEventListener("click", () => {
       div.addEventListener("mouseover", () => {
